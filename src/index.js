@@ -29,11 +29,11 @@ function construct (Class, isConstructor, args) {
     return new Class(...args)
   } else {
     const prototype = new Class()
-    if (prototype instanceof String ||
-      prototype instanceof Number ||
-      prototype instanceof Boolean) {
+    if (prototype instanceof builtIn.String ||
+      prototype instanceof builtIn.Number ||
+      prototype instanceof builtIn.Boolean) {
       return new Class(...args).valueOf()
-    } else if (prototype instanceof Date) {
+    } else if (prototype instanceof builtIn.Date) {
       return new Class(...args).toString()
     } else {
       return new Class(...args)
